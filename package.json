@@ -1,0 +1,19 @@
+{
+  "name": "emall-fe",
+  "version": "1.0.0",
+  "description": "This is E-commerce site!Just for learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/15111812934/emall-fe.git"
+  },
+  "author": "Aley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/15111812934/emall-fe/issues"
+  },
+  "homepage": "https://github.com/15111812934/emall-fe#readme"
+}
