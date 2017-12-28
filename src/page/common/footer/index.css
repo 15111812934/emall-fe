@@ -1,0 +1,22 @@
+/*
+* @Author: yangmei
+* @Date:   2017-12-27 20:48:36
+* @Last Modified by:   yangmei
+* @Last Modified time: 2017-12-27 21:07:53
+*/
+.footer{
+	text-align: center;
+	margin-top: 20px;
+	padding-bottom: 10px;
+}
+.footer .links{
+	color:#666;
+	line-height: 30px;
+}
+.footer .links .link{
+	padding:0px 10px;
+}
+.footer .copyright{
+   color:#666;
+   line-height: 30px;
+}

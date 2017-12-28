@@ -1,0 +1,19 @@
+/*
+* @Author: yangmei
+* @Date:   2017-12-27 23:09:21
+* @Last Modified by:   yangmei
+* @Last Modified time: 2017-12-27 23:17:50
+*/
+.nav-simple {
+	height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+.nav-simple .logo{
+	display: block;
+	font-size: 30px;
+	color: #c60023;
+	font-weight: bold;
+	text-decoration: none;
+}
