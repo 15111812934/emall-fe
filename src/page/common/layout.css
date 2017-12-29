@@ -2,7 +2,7 @@
 * @Author: yangmei
 * @Date:   2017-12-27 16:53:10
 * @Last Modified by:   yangmei
-* @Last Modified time: 2017-12-27 20:44:19
+* @Last Modified time: 2017-12-28 22:03:22
 */
 *{
 	margin:0px;
@@ -65,6 +65,7 @@ input[type='checkbox']{
     outline: none;
     cursor: pointer;
     text-decoration: none;
+    background: #c60023;
 }
 .btn-mini{
 	height:25px;
@@ -82,4 +83,21 @@ input[type='checkbox']{
 	border-radius: 5px;
 	background: url(../../image/icon/loading.gif) no-repeat;
 	opacity: .6;
+}
+/* panel */
+.panel{
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+.panel .panel-title{
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+.panel .panel-body{
+    padding: 10px;
+    overflow: hidden;
 }

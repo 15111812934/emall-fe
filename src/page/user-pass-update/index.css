@@ -1,0 +1,23 @@
+/*
+* @Author: yangmei
+* @Date:   2017-09-26 22:13:10
+* @Last Modified by:   yangmei
+* @Last Modified time: 2017-09-26 22:29:42
+*/
+.form-line{
+    margin-bottom: 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+.form-line .label{
+    display: inline-block;
+    width: 70px;
+    text-align:right;
+}
+.form-line .input{
+    height: 25px;
+    line-height: 25px;
+    width: 200px;
+    font-size: 14px;
+}

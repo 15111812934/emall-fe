@@ -1,8 +1,8 @@
 /*
 * @Author: yangmei
-* @Date:   2017-12-27 18:10:54
+* @Date:   2017-12-28 15:34:24
 * @Last Modified by:   yangmei
-* @Last Modified time: 2017-12-28 19:42:08
+* @Last Modified time: 2017-12-28 19:43:17
 */
 /*最外层容器*/
 .user-wrap{
@@ -83,11 +83,8 @@
 	margin-top:10px;
 }
 .user-con .link-item .link{
-	margin-left: 10px;
 	color:#666;
 }
 .user-con .link-item .link:hover{
    color: #e80012;
 }
- 
-   

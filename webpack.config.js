@@ -2,7 +2,7 @@
 * @Author: yangmei
 * @Date:   2017-12-26 15:35:35
 * @Last Modified by:   yangmei
-* @Last Modified time: 2017-12-28 14:59:55
+* @Last Modified time: 2017-12-29 10:35:02
 */
 // "use strict";
 var   webpack           = require('webpack');
@@ -25,15 +25,21 @@ var getHtmlConfig=function(name,title){
 var config={
 	  	//页面入口文件配置
 	entry: {
-		'common'      :['./src/page/common/index.js'],
-		'index'       :['./src/page/index/index.js'],
-		'user-login'  :['./src/page/user-login/index.js'],
-        'result'      :['./src/page/result/index.js']
+		'common'            : ['./src/page/common/index.js'],
+		'index'             : ['./src/page/index/index.js'],
+		'user-login'        : ['./src/page/user-login/index.js'],
+        'user-register'     : ['./src/page/user-register/index.js'],
+        'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
+        'user-center'       : ['./src/page/user-center/index.js'],
+        'user-center-update': ['./src/page/user-center-update/index.js'],
+        'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
+        'result'            : ['./src/page/result/index.js']
 	},
 		//入口文件输出配置
     output: {
         path        : __dirname + '/dist/',//存放文件（生成文件）
-        publicPath  : '/dist/',//访问文件时用的路径
+        // 如果是开发环境，就取/dist/,否则，
+        publicPath :'dev'===WEBPACK_ENV? '/dist/':'//s.happymmall.com/emall-fe/dist/',
         filename    : 'js/[name].js'
     },
     externals:{ //模块化方式引入jquery
@@ -76,7 +82,15 @@ var config={
         //html模块的处理
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
         new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
     ]
 };
+if('dev' === WEBPACK_ENV){
+    config.entry.common.push('webpack-dev-server/client?http://localhost:8089/');
+}
 module.exports=config;
