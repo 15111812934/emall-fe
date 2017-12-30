@@ -2,7 +2,7 @@
 * @Author: yangmei
 * @Date:   2017-12-26 15:35:35
 * @Last Modified by:   yangmei
-* @Last Modified time: 2017-12-29 10:35:02
+* @Last Modified time: 2017-12-30 22:15:51
 */
 // "use strict";
 var   webpack           = require('webpack');
@@ -33,13 +33,16 @@ var config={
         'user-center'       : ['./src/page/user-center/index.js'],
         'user-center-update': ['./src/page/user-center-update/index.js'],
         'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
+        'list'              : ['./src/page/list/index.js'],
+        'detail'            : ['./src/page/detail/index.js'],
         'result'            : ['./src/page/result/index.js']
 	},
 		//入口文件输出配置
     output: {
         path        : __dirname + '/dist/',//存放文件（生成文件）
+        publicPath  :'/dist/',
         // 如果是开发环境，就取/dist/,否则，
-        publicPath :'dev'===WEBPACK_ENV? '/dist/':'//s.happymmall.com/emall-fe/dist/',
+        // publicPath :'dev'===WEBPACK_ENV? '/dist/':'//s.happymmall.com/emall-fe/dist/',
         filename    : 'js/[name].js'
     },
     externals:{ //模块化方式引入jquery
@@ -87,6 +90,8 @@ var config={
         new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
         new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
+        new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
+        new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
     ]
 };
