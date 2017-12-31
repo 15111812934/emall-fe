@@ -2,7 +2,7 @@
 * @Author: yangmei
 * @Date:   2017-12-26 15:35:35
 * @Last Modified by:   yangmei
-* @Last Modified time: 2017-12-30 22:15:51
+* @Last Modified time: 2017-12-31 16:08:27
 */
 // "use strict";
 var   webpack           = require('webpack');
@@ -35,14 +35,15 @@ var config={
         'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
         'list'              : ['./src/page/list/index.js'],
         'detail'            : ['./src/page/detail/index.js'],
-        'result'            : ['./src/page/result/index.js']
+        'result'            : ['./src/page/result/index.js'],
+        'cart'            : ['./src/page/cart/index.js']
 	},
 		//入口文件输出配置
     output: {
         path        : __dirname + '/dist/',//存放文件（生成文件）
-        publicPath  :'/dist/',
+        // publicPath  :'/dist/',
         // 如果是开发环境，就取/dist/,否则，
-        // publicPath :'dev'===WEBPACK_ENV? '/dist/':'//s.happymmall.com/emall-fe/dist/',
+        publicPath :'dev'===WEBPACK_ENV? '/dist/':'//s.happymmall.com/emall-fe/dist/',
         filename    : 'js/[name].js'
     },
     externals:{ //模块化方式引入jquery
@@ -92,7 +93,8 @@ var config={
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
         new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
         new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),
-        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
+        new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车'))
     ]
 };
 if('dev' === WEBPACK_ENV){

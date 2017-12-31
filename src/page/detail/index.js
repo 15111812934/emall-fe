@@ -2,7 +2,7 @@
 * @Author: yangmei
 * @Date:   2017-12-30 13:30:49
 * @Last Modified by:   yangmei
-* @Last Modified time: 2017-12-30 22:13:30
+* @Last Modified time: 2017-12-31 14:04:32
 */
 require('./index.css');
 require('page/common/nav/index.js');
@@ -10,7 +10,6 @@ require('page/common/header/index.js');
 var _em             = require('util/em.js');
 var _cart           = require('service/cart-service.js');
 var _product        = require('service/product-service.js');
-var Pagination      = require('util/pagination/index.js');
 var templateIndex   = require('./index.string');
 var page = {
     data : {
