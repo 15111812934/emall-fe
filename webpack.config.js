@@ -2,7 +2,7 @@
 * @Author: yangmei
 * @Date:   2017-12-26 15:35:35
 * @Last Modified by:   yangmei
-* @Last Modified time: 2017-12-31 16:08:27
+* @Last Modified time: 2017-12-31 16:24:03
 */
 // "use strict";
 var   webpack           = require('webpack');
@@ -36,7 +36,8 @@ var config={
         'list'              : ['./src/page/list/index.js'],
         'detail'            : ['./src/page/detail/index.js'],
         'result'            : ['./src/page/result/index.js'],
-        'cart'            : ['./src/page/cart/index.js']
+        'cart'            : ['./src/page/cart/index.js'],
+        'about'             : ['./src/page/about/index.js']
 	},
 		//入口文件输出配置
     output: {
@@ -94,7 +95,8 @@ var config={
         new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
         new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
-        new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车'))
+        new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+        new HtmlWebpackPlugin(getHtmlConfig('about', '关于EMALL'))
     ]
 };
 if('dev' === WEBPACK_ENV){
