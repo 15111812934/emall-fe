@@ -2,7 +2,7 @@
 * @Author: yangmei
 * @Date:   2017-12-26 15:35:35
 * @Last Modified by:   yangmei
-* @Last Modified time: 2018-01-02 17:54:12
+* @Last Modified time: 2018-01-02 18:13:24
 */
 // "use strict";
 var   webpack           = require('webpack');
@@ -40,7 +40,8 @@ var config={
         'about'             : ['./src/page/about/index.js'],
         'order-confirm'     : ['./src/page/order-confirm/index.js'],
         'order-list'        : ['./src/page/order-list/index.js'],
-        'order-detail'      : ['./src/page/order-detail/index.js']
+        'order-detail'      : ['./src/page/order-detail/index.js'],
+        'payment'           : ['./src/page/payment/index.js']
 	},
 		//入口文件输出配置
     output: {
@@ -102,6 +103,7 @@ var config={
         new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
         new HtmlWebpackPlugin(getHtmlConfig('order-list', '订单列表')),
         new HtmlWebpackPlugin(getHtmlConfig('order-detail', '订单详情')),
+        new HtmlWebpackPlugin(getHtmlConfig('payment', '订单支付')),
         new HtmlWebpackPlugin(getHtmlConfig('about', '关于EMALL'))
     ]
 };
