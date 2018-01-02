@@ -2,7 +2,7 @@
 * @Author: yangmei
 * @Date:   2017-12-26 15:35:35
 * @Last Modified by:   yangmei
-* @Last Modified time: 2017-12-31 16:24:03
+* @Last Modified time: 2018-01-02 17:54:12
 */
 // "use strict";
 var   webpack           = require('webpack');
@@ -36,8 +36,11 @@ var config={
         'list'              : ['./src/page/list/index.js'],
         'detail'            : ['./src/page/detail/index.js'],
         'result'            : ['./src/page/result/index.js'],
-        'cart'            : ['./src/page/cart/index.js'],
-        'about'             : ['./src/page/about/index.js']
+        'cart'              : ['./src/page/cart/index.js'],
+        'about'             : ['./src/page/about/index.js'],
+        'order-confirm'     : ['./src/page/order-confirm/index.js'],
+        'order-list'        : ['./src/page/order-list/index.js'],
+        'order-detail'      : ['./src/page/order-detail/index.js']
 	},
 		//入口文件输出配置
     output: {
@@ -96,6 +99,9 @@ var config={
         new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
         new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+        new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
+        new HtmlWebpackPlugin(getHtmlConfig('order-list', '订单列表')),
+        new HtmlWebpackPlugin(getHtmlConfig('order-detail', '订单详情')),
         new HtmlWebpackPlugin(getHtmlConfig('about', '关于EMALL'))
     ]
 };
