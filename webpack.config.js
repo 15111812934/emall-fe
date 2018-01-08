@@ -28,49 +28,47 @@ var config={
 		'common'            : ['./src/page/common/index.js'],
 		'index'             : ['./src/page/index/index.js'],
 		'user-login'        : ['./src/page/user-login/index.js'],
-        'user-register'     : ['./src/page/user-register/index.js'],
-        'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
-        'user-center'       : ['./src/page/user-center/index.js'],
-        'user-center-update': ['./src/page/user-center-update/index.js'],
-        'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
-        'list'              : ['./src/page/list/index.js'],
-        'detail'            : ['./src/page/detail/index.js'],
-        'result'            : ['./src/page/result/index.js'],
-        'cart'              : ['./src/page/cart/index.js'],
-        'about'             : ['./src/page/about/index.js'],
-        'order-confirm'     : ['./src/page/order-confirm/index.js'],
-        'order-list'        : ['./src/page/order-list/index.js'],
-        'order-detail'      : ['./src/page/order-detail/index.js'],
-        'payment'           : ['./src/page/payment/index.js']
+                'user-register'     : ['./src/page/user-register/index.js'],
+                'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
+                'user-center'       : ['./src/page/user-center/index.js'],
+                'user-center-update': ['./src/page/user-center-update/index.js'],
+                'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
+                'list'              : ['./src/page/list/index.js'],
+                'detail'            : ['./src/page/detail/index.js'],
+                'result'            : ['./src/page/result/index.js'],
+                'cart'              : ['./src/page/cart/index.js'],
+                'about'             : ['./src/page/about/index.js'],
+                'order-confirm'     : ['./src/page/order-confirm/index.js'],
+                'order-list'        : ['./src/page/order-list/index.js'],
+                'order-detail'      : ['./src/page/order-detail/index.js'],
+                'payment'           : ['./src/page/payment/index.js']
 	},
 		//入口文件输出配置
-    output: {
-        path        : __dirname + '/dist/',//存放文件（生成文件）
-        // publicPath  :'/dist/',
-        // 如果是开发环境，就取/dist/,否则，
-        publicPath :'dev'===WEBPACK_ENV? '/dist/':'//s.happymmall.com/emall-fe/dist/',
-        filename    : 'js/[name].js'
-    },
-    externals:{ //模块化方式引入jquery
-        'jquery':'window.jQuery'
-    },
-    module: {
-         //加载器配置
-        loaders:[
-            // {test: /\.css$/, loader:  ExtractTextPlugin.extract("style-loader","css-loader")},
-            {test: /\.css$/, use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: [ 'css-loader' ] }) },
-            {test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader:"url-loader?limit=100&name=resource/[name].[ext]"},
-            {test: /\.string$/,
-             loader:'html-loader',
-             query : {
+        output: {
+              path        : __dirname + '/dist/',//存放文件（生成文件）
+              publicPath  :'/dist/',
+              filename    : 'js/[name].js'
+       },
+       externals:{ //模块化方式引入jquery
+             'jquery':'window.jQuery'
+       },
+       module: {
+              //加载器配置
+             loaders:[
+             // {test: /\.css$/, loader:  ExtractTextPlugin.extract("style-loader","css-loader")},
+              {test: /\.css$/, use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: [ 'css-loader' ] }) },
+              {test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader:"url-loader?limit=100&name=resource/[name].[ext]"},
+              {test: /\.string$/,
+                loader:'html-loader',
+              query : {
                     minimize : true,// 加载时，做最小化的压缩
                     removeAttributeQuotes : false //指定是否删除属性上的引号
                 }
-            }
-        ]
-    },
+             }
+         ]
+     },
     //其它解决方案配置
-    resolve : {
+     resolve : {
         alias : {
             node_modules    : __dirname + '/node_modules',
             util            : __dirname + '/src/util',
@@ -106,8 +104,8 @@ var config={
         new HtmlWebpackPlugin(getHtmlConfig('payment', '订单支付')),
         new HtmlWebpackPlugin(getHtmlConfig('about', '关于EMALL'))
     ]
-};
-if('dev' === WEBPACK_ENV){
+ };
+ if('dev' === WEBPACK_ENV){
     config.entry.common.push('webpack-dev-server/client?http://localhost:8089/');
-}
+ }
 module.exports=config;
